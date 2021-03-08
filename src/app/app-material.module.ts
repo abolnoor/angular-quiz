@@ -12,7 +12,16 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
+<<<<<<< HEAD
 
+=======
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+>>>>>>> develope
 
 
 
@@ -32,7 +41,19 @@ import {MatCardModule} from '@angular/material/card';
     MatSortModule,
     MatTableModule,
     MatRippleModule,
+<<<<<<< HEAD
     MatCardModule
+=======
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+>>>>>>> develope
   ]
 })
 export class AppMaterialModule { }

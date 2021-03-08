@@ -1,0 +1,17 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search</mat-label>
+      <input type="text"
+             placeholder="Enter user id"
+             aria-label="ID"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="openUser($event)">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option.id" >
+          <div *ngIf="option.id"><img [src]="option.avatar" class="mat-icon" alt="" srcset="">
+            {{option.first_name + " " + option.last_name}}</div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
