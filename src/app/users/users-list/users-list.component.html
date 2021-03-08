@@ -1,0 +1,65 @@
+<div class="container mat-elevation-z8" >
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle [value]="false" aria-label="list view">
+      <mat-icon>view_list</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle [value]="true" aria-label="grid view">
+      <mat-icon>view_module</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <div class="loading-shade"
+       *ngIf="isLoadingResults || isError">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="is-error" *ngIf="isError">
+      Error!
+    </div>
+  </div>
+
+  <div class="table-container" *ngIf="!group.value">
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Avatar Column -->
+  <ng-container matColumnDef="avatar">
+    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+    <mat-cell *matCellDef="let element"> <img [src]="element.avatar" alt=""> </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.first_name + " " + element.last_name}} </mat-cell>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openUser(row)"></mat-row>
+</mat-table>
+</div>
+
+<mat-grid-list *ngIf="!!group.value" cols="3" rowHeight="300" gutterSize="5em">
+  <mat-grid-tile 
+  [colspan]="1"
+      [rowspan]="1"
+      *ngFor="let user of dataSource let i=index" 
+      (click)="openUser(user)"
+      [style.background-image]="'url(' + user.avatar + ')'" >
+    
+    <mat-grid-tile-footer>{{user.first_name + " " + user.last_name}}
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-paginator [length]="resultsLength" [pageSize]="resultPageSize"></mat-paginator>
+</div>
+
