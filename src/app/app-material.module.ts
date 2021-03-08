@@ -13,6 +13,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -34,7 +36,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatTableModule,
     MatRippleModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatButtonToggleModule
   ]
 })
 export class AppMaterialModule { }
