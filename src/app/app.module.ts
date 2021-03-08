@@ -9,13 +9,15 @@ import { AppMaterialModule } from './app-material.module';
 import { HeaderComponent } from './header/header.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchBoxComponent,
-    UsersListComponent
+    UsersListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
