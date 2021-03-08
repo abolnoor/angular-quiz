@@ -12,9 +12,6 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -35,10 +32,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSortModule,
     MatTableModule,
     MatRippleModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatGridListModule,
-    MatButtonToggleModule
+    MatCardModule
   ]
 })
 export class AppMaterialModule { }
